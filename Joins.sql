@@ -28,7 +28,11 @@ JOIN customer as cr on
 cr.store_id = st.store_id
 join payment as pt on 
 pt.customer_id = cr.customer_id
+join staff as sf on
+st.manager_staff_id = sf.staff_id
 group by st.store_id;
+SELECT * FROM staff;
+SELECT * FROM store;
 -- SELECT * FROM customer;
 -- SELECT * FROM payment;
 -- Determine the average running time of films for each category.
@@ -40,3 +44,5 @@ fc.category_id = ct.category_id
 group by ct.name;
 -- SELECT * FROM film_category;
 -- SELECT * FROM category;
+
+
